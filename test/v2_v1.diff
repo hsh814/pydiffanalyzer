@@ -1,0 +1,22 @@
+diff --git a/remove_html_markup.py b/remove_html_markup.py
+index 076c393..a654376 100644
+--- a/remove_html_markup.py
++++ b/remove_html_markup.py
+@@ -1,15 +1,12 @@
+ def remove_html_markup(s):
+     tag = False
+-    quote = False
+     out = ""
+ 
+     for c in s:
+-        if c == '<' and not quote:
++        if c == '<':
+             tag = True
+-        elif c == '>' and not quote:
++        elif c == '>':
+             tag = False
+-        elif c == '"' or c == "'" and tag:
+-            quote = not quote
+         elif not tag:
+             out = out + c
+ 
